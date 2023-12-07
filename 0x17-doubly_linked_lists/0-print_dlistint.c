@@ -9,22 +9,22 @@
  */
 size_t print_dlistint(const dlistint_t *w)
 {
-	int count;
+int count;
 
-	count = 0;
+count = 0;
 
-	if (w == NULL)
-		return (count);
+if (w == NULL)
+return (count);
 
-	while (w->prev != NULL)
-		w = w->prev;
+while (w->prev != NULL)
+w = w->prev;
 
-	while (w != NULL)
-	{
-		printf("%d\n", w->n);
-		count++;
-		w = w->next;
-	}
+while (w != NULL)
+{
+printf("%d\n", w->n);
+count++;
+w = w->next;
+}
 
-	return (count);
+return (count);
 }
