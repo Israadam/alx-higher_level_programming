@@ -4,12 +4,16 @@
 
 class Square:
     """Defines a square."""
+
     def __init__(self, size=0):
         """Constructor.
+
         Args:
+
         size: Length of a side of the square.
         """
         self.size = size
+
         @property
         def size(self):
             """Property for the lenght of a side of this square.
@@ -19,6 +23,7 @@ class Square:
             ValueError: If size is less than 0.
             """
             return self.__size
+
         @size.setter
         def size(self, value):
             if not isinstance(value, int):
@@ -32,3 +37,4 @@ class Square:
                 returns:
                 The size squared.
                 """
+                return self.__size ** 2
