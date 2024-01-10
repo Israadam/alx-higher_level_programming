@@ -1,53 +1,31 @@
-# The ``3-say_my_name`` module
-============================================
-How to use 3-say_my_name.py
-============================================
+#!/usr/bin/python3
+"""Defines a function that prints a square with the character #.
 
-This library has one function called ``say_my_name()``
+Attributes:
+    print_square: function that prints a square with the character #.
+"""
 
-``say_my_name()`` prints a person's first name and last name.
 
-Importing the function say_my_name.
-    >>> say_my_name = __import__('3-say_my_name').say_my_name
+def print_square(size):
+    """Prints a square with the character #.
 
-Passing first_name and last_name correctly.
-    >>> say_my_name("Wendy", "Munyasi")
-    My name is Wendy Munyasi
+    Args:
+        size (int): Size of the square (1 side).
 
-    >> say_my_name("Breezy")
-    My name is Breezy
+    Raises:
+        TypeError: If size is not an integer and less than 0.
+        ValueError: If size is less than 0.
+    """
+    message = "size must be an integer"
 
-Passing last_name as None.
-    >>> say_my_name("Wendy", None)
-    Traceback (most recent call last):
-        ...
-    TypeError: last_name must be a string
+    if not isinstance(size, int):
+        raise TypeError(message)
 
-Passing first_name and last_name as None.
-    >>> say_my_name(None, None)
-    Traceback (most recent call last):
-        ...
-    TypeError: first_name must be a string
+    if size < 0:
+        raise ValueError("size must be >= 0")
 
-Passing first name as None.
-    >>> say_my_name(None, "Breezy")
-    Traceback (most recent call last):
-        ...
-    TypeError: first_name must be a string
+    if isinstance(size, float) and size < 0:
+        raise TypeError(message)
 
-Passing wrong types as first_name and last_name
-    >>> say_my_name(1, "Breezy")
-    Traceback (most recent call last):
-        ...
-    TypeError: first_name must be a string
-
-    >>> say_my_name("Chris", [4])
-    Traceback (most recent call last):
-        ...
-    TypeError: last_name must be a string
-
-Passing more than two arguments to say_my_name().
-    >>> say_my_name("Chris", "Breezy", "Brown") #doctest: +ELLIPSIS
-    Traceback (most recent call last):
-        ...
-    TypeError: say_my_name() takes from 1 to 2 positional arguments but ...
+    for i in range(size):
+        print("#" * size)
